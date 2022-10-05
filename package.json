@@ -1,0 +1,28 @@
+{
+  "name": "installit",
+  "version": "0.0.1",
+  "description": "alias cli for long installation commands",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "installit": "./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwpjrdev/installit.git"
+  },
+  "author": {
+    "name": "Joshua Price",
+    "email": "jwpjr567@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jwpjrdev/installit/issues"
+  },
+  "homepage": "https://github.com/jwpjrdev/installit#readme",
+  "dependencies": {
+    "properties-parser": "^0.3.1"
+  }
+}
