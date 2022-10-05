@@ -1,6 +1,6 @@
 {
   "name": "installit",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "alias cli for long installation commands",
   "main": "bin/index.js",
   "scripts": {
