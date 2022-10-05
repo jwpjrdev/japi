@@ -4,7 +4,7 @@
   "description": "alias cli for long installation commands",
   "main": "bin/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "husky install"
   },
   "bin": {
     "installit": "./bin/index.js"
@@ -15,14 +15,23 @@
   },
   "author": {
     "name": "Joshua Price",
-    "email": "jwpjr567@gmail.com"
+    "email": "jwpjr567@gmail.com",
+    "url": "https://github.com/jwpjrdev"
   },
+  "type": "module",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jwpjrdev/installit/issues"
   },
   "homepage": "https://github.com/jwpjrdev/installit#readme",
   "dependencies": {
+    "node-fetch": "^3.2.10",
     "properties-parser": "^0.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.24.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "husky": "^8.0.1"
   }
 }
