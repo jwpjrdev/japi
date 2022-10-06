@@ -7,7 +7,7 @@
     "prepare": "husky install"
   },
   "bin": {
-    "installit": "./bin/index.js"
+    "napm": "./bin/index.js"
   },
   "repository": {
     "type": "git",
