@@ -1,7 +1,7 @@
 {
-  "name": "installit",
+  "name": "napm",
   "version": "0.1.0",
-  "description": "alias cli for long installation commands",
+  "description": "napm is not a package manager",
   "main": "bin/index.js",
   "scripts": {
     "prepare": "husky install"
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jwpjrdev/installit.git"
+    "url": "git+https://github.com/jwpjrdev/napm.git"
   },
   "author": {
     "name": "Joshua Price",
@@ -21,9 +21,9 @@
   "type": "module",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jwpjrdev/installit/issues"
+    "url": "https://github.com/jwpjrdev/napm/issues"
   },
-  "homepage": "https://github.com/jwpjrdev/installit#readme",
+  "homepage": "https://github.com/jwpjrdev/napm#readme",
   "dependencies": {
     "node-fetch": "^3.2.10",
     "properties-parser": "^0.3.1"

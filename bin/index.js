@@ -7,14 +7,14 @@ import { spawn } from 'node:child_process';
 let arg = process.argv.slice(2)[0];
 
 if (!arg) {
-  console.error('usage: installit [installer] - run an installer');
-  console.error('usage: installit list - list all installers');
+  console.error('usage: napm [installer] - run an installer');
+  console.error('usage: napm list - list all installers');
   process.exit(0);
 }
 
 arg = arg.toLowerCase();
 
-const response = await fetch('https://raw.githubusercontent.com/jwpjrdev/installit/master/data/commands.properties');
+const response = await fetch('https://raw.githubusercontent.com/jwpjrdev/napm/master/data/commands.properties');
 const commands = parse(await response.text());
 
 const keys = Object.keys(commands);
