@@ -3,14 +3,14 @@
 napm provides short aliases to installation commands.
 napm is not a package manager. it doesn't provide commands to uninstall or reverse installations.
 
-# Installation
+## Installation
 
 napm is available on npm:
 ```shell
 $ npm install -g napm
 ```
 
-# Usage
+## Usage
 
 List all installers:
 ```shell
@@ -23,10 +23,10 @@ $ napm [installer]
 ```
 Note that dependencies such as `cURL` may be required for certain installers.
 
-## Supported Installers
+### Supported Installers
 The currently supported installers can be seen in [`installers/src/`](installers/src/).
 
-## Example Usage
+### Example Usage
 
 To install the Rust language, the `rust` installer can be used:
 ```shell
@@ -37,10 +37,10 @@ This runs the following script:
 $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-# Contributing
+## Contributing
 
 Please refer to [CONTRIBUTING.md](CONTRIBUTING.md).
 
-# License
+## License
 
 This project is licensed under the [MIT license](LICENSE).
