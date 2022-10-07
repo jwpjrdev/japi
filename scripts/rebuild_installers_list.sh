@@ -19,12 +19,16 @@ contents=$(printf "# do not manually edit this file
 $list")
 
 if [ -f "$list_file" ] ; then
+  if [[ $(< $list_file) == "$contents" ]]; then
+    echo "Did not need to rebuild installers list"
+  else
     rm "$list_file"
+    echo "$contents" > $list_file
+    echo "Saved rebuilt installers list to $list_file"
+
+    git add $list_file >
+    git commit -m "chore: "
+
+    # echo "Adding changes to latest commit.."
+  fi
 fi
-echo "$contents" > $list_file
-
-echo "Saved rebuilt installers list to $list_file"
-
-# git add $list_file
-# git commit --amend --no-edit
-# echo "Adding changes to latest commit.."
