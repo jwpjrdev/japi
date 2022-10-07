@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# do not execute this script directly, it is automatically executed on git push
+
 function joinArr {
   local IFS="$1";
   shift;
@@ -8,8 +10,6 @@ function joinArr {
 
 installers_dir="./installers/src/"
 list_file="./installers/list"
-
-echo "Rebuilding installers list..."
 
 files=( $(ls $installers_dir) )
 list=$(joinArr , ${files[@]})
@@ -26,9 +26,9 @@ if [ -f "$list_file" ] ; then
     echo "$contents" > $list_file
     echo "Saved rebuilt installers list to $list_file"
 
-    git add $list_file >
-    git commit -m "chore: "
+    git add $list_file
+    git commit -m "auto: rebuild installers list" > /dev/null
 
-    # echo "Adding changes to latest commit.."
+    echo "Committing rebuilt installers list.."
   fi
 fi
