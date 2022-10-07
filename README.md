@@ -1,37 +1,38 @@
-# installit
+# napm
 
-`installit` is a command-line interface for Linux-based systems that provides aliases to long one-liner installation commands.
+napm provides short aliases to installation commands.
+napm is not a package manager. it doesn't provide commands to uninstall or reverse installations.
 
 # Installation
 
-installit is available on npm:
+napm is available on npm:
 ```shell
-$ npm install -g installit
+$ npm install -g napm
 ```
 
 # Usage
 
 List all installers:
 ```shell
-$ installit list
+$ napm list
 ```
 
 Run an installer:
 ```shell
-$ installit [installer]
+$ napm [installer]
 ```
 Note that dependencies such as `cURL` may be required for certain installers.
 
 ## Supported Installers
-The currently supported installers can be seen in [`data/commands.properties`](data/commands.properties).
+The currently supported installers can be seen in [`installers/src/`](installers/src/).
 
 ## Example Usage
 
 To install the Rust language, the `rust` installer can be used:
 ```shell
-$ installit rust
+$ napm rust
 ```
-This runs the following one-liner:
+This runs the following script:
 ```shell
 $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
