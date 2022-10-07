@@ -1,8 +1,36 @@
 #!/usr/bin/env node
 
-import { parse } from 'properties-parser';
+/* eslint-disable no-restricted-syntax */
+
 import fetch from 'node-fetch';
 import { spawn } from 'node:child_process';
+
+const fetchConfig = {
+  headers: {
+    pragma: 'no-cache',
+    'cache-control': 'no-cache',
+  },
+};
+
+function parseList(text) {
+  let toReturn = [];
+  const lines = text.split(/\r?\n/);
+
+  for (const line of lines) {
+    if (!line.startsWith('#')) {
+      if (line.trim() !== '') {
+        toReturn = toReturn.concat(line.split(','));
+      }
+    }
+  }
+  return toReturn;
+}
+
+async function fetchInstaller(key) {
+  const response = await fetch(`https://raw.githubusercontent.com/jwpjrdev/napm/master/installers/src/${key}`, fetchConfig);
+  const text = await response.text();
+  return text;
+}
 
 let arg = process.argv.slice(2)[0];
 
@@ -14,10 +42,9 @@ if (!arg) {
 
 arg = arg.toLowerCase();
 
-const response = await fetch('https://raw.githubusercontent.com/jwpjrdev/napm/master/data/commands.properties');
-const commands = parse(await response.text());
-
-const keys = Object.keys(commands);
+const response = await fetch('https://raw.githubusercontent.com/jwpjrdev/napm/master/installers/list', fetchConfig);
+const text = await response.text();
+const keys = parseList(text);
 
 if (arg === 'list') {
   const installers = keys.join(', ');
@@ -30,5 +57,7 @@ if (!keys.includes(arg)) {
   process.exit(0);
 }
 
-spawn(commands[arg], [], { shell: true, stdio: 'inherit' });
+const installerScript = await fetchInstaller(arg);
+
+spawn(installerScript, [], { shell: true, stdio: 'inherit' });
 // .on('exit', (code) => console.log(code.toString()));
