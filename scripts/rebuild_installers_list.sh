@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# do not execute this script directly, it is automatically executed on git push
+# execute this script after adding or removing an installer
 
 function joinArr {
   local IFS="$1";
@@ -25,10 +25,5 @@ if [ -f "$list_file" ] ; then
     rm "$list_file"
     echo "$contents" > $list_file
     echo "Saved rebuilt installers list to $list_file"
-
-    git add $list_file
-    git commit -m "auto: rebuild installers list" > /dev/null
-
-    echo "Committing rebuilt installers list.."
   fi
 fi
