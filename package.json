@@ -1,6 +1,7 @@
 {
-  "name": "japi",
-  "version": "0.1.0",
+  "name": "@jwpjrdev/japi",
+  "public": true,
+  "version": "0.1.1",
   "description": "just a package installer",
   "main": "bin/index.js",
   "scripts": {

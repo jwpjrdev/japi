@@ -7,7 +7,7 @@ japi is not a package manager. it doesn't provide commands to uninstall or rever
 
 japi is available on npm:
 ```shell
-$ npm install -g japi
+$ npm install -g @jwpjrdev/japi
 ```
 
 ## Usage
