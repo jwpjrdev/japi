@@ -27,7 +27,7 @@ function parseList(text) {
 }
 
 async function fetchInstaller(key) {
-  const response = await fetch(`https://raw.githubusercontent.com/jwpjrdev/napm/master/installers/src/${key}`, fetchConfig);
+  const response = await fetch(`https://raw.githubusercontent.com/jwpjrdev/japi/master/installers/src/${key}`, fetchConfig);
   const text = await response.text();
   return text;
 }
@@ -35,14 +35,14 @@ async function fetchInstaller(key) {
 let arg = process.argv.slice(2)[0];
 
 if (!arg) {
-  console.error('usage: napm [installer] - run an installer');
-  console.error('usage: napm list - list all installers');
+  console.error('usage: japi [installer] - run an installer');
+  console.error('usage: japi list - list all installers');
   process.exit(0);
 }
 
 arg = arg.toLowerCase();
 
-const response = await fetch('https://raw.githubusercontent.com/jwpjrdev/napm/master/installers/list', fetchConfig);
+const response = await fetch('https://raw.githubusercontent.com/jwpjrdev/japi/master/installers/list', fetchConfig);
 const text = await response.text();
 const keys = parseList(text);
 

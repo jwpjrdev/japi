@@ -1,25 +1,25 @@
-# napm
+# japi
 
-napm provides short aliases to installation commands.
-napm is not a package manager. it doesn't provide commands to uninstall or reverse installations.
+japi provides short aliases to installation commands.
+japi is not a package manager. it doesn't provide commands to uninstall or reverse installations.
 
 ## Installation
 
-napm is available on npm:
+japi is available on npm:
 ```shell
-$ npm install -g napm
+$ npm install -g japi
 ```
 
 ## Usage
 
 List all installers:
 ```shell
-$ napm list
+$ japi list
 ```
 
 Run an installer:
 ```shell
-$ napm [installer]
+$ japi [installer]
 ```
 Note that dependencies such as `cURL` may be required for certain installers.
 
@@ -30,9 +30,9 @@ The currently supported installers can be seen in [`installers/src/`](installers
 
 To install the Rust language, the `rust` installer can be used:
 ```shell
-$ napm rust
+$ japi rust
 ```
-This runs the following script:
+This runs the following script, found in [/installers/src/rust](/installers/src/rust):
 ```shell
 $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```

@@ -1,17 +1,17 @@
 {
-  "name": "napm",
+  "name": "japi",
   "version": "0.1.0",
-  "description": "napm is not a package manager",
+  "description": "just a package installer",
   "main": "bin/index.js",
   "scripts": {
     "prepare": "husky install"
   },
   "bin": {
-    "napm": "./bin/index.js"
+    "japi": "./bin/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jwpjrdev/napm.git"
+    "url": "git+https://github.com/jwpjrdev/japi.git"
   },
   "author": {
     "name": "Joshua Price",
@@ -21,9 +21,9 @@
   "type": "module",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jwpjrdev/napm/issues"
+    "url": "https://github.com/jwpjrdev/japi/issues"
   },
-  "homepage": "https://github.com/jwpjrdev/napm#readme",
+  "homepage": "https://github.com/jwpjrdev/japi#readme",
   "dependencies": {
     "node-fetch": "^3.2.10"
   },
