@@ -1,0 +1,3 @@
+wget https://github.com/bootandy/dust/releases/download/v0.8.3/du-dust_0.8.3_amd64.deb -P /tmp/
+sudo dpkg -i /tmp/du-dust_0.8.3_amd64.deb
+rm /tmp/du-dust_0.8.3_amd64.deb
